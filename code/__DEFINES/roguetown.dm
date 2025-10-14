@@ -221,13 +221,13 @@ Balloon Alert / Floating Text defines
 	/datum/species/akula,\
 	/datum/species/anthromorph,\
 	/datum/species/demihuman,\
+	/datum/species/lamia,\
 
 #define RACES_SHUNNED \
 	/datum/species/halforc,\
 	/datum/species/anthromorphsmall,\
 	/datum/species/kobold,\
 	/datum/species/dullahan,\
-	/datum/species/lamia,\
 
 #define RACES_DESPISED \
 	/datum/species/goblinp,\
