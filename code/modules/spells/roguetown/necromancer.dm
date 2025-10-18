@@ -196,6 +196,7 @@
 	S.caster = user
 	if(user.faction)
 		S.friendly_factions = list("[user.mind.current.real_name]_faction")
+		S.faction = list("[user.mind.current.real_name]_faction")
 	S.set_command("follow", user)
 	S.faction = "[user.name]_faction"
 
@@ -355,7 +356,7 @@
 	var/command_type
 	if(ismob(target))
 		var/mob/living/L = target
-		if(L == user || faction_tag in L.faction)
+		if(L == user || (faction_tag in L.faction))
 			command_type = "follow"
 		else
 			command_type = "attack"
