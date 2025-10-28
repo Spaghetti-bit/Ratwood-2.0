@@ -99,10 +99,11 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 	var/heretic_nickname 	// Nickname used for heretic commune
 
 	var/picking = FALSE		// Variable that lets the event picker see if someones getting chosen or not
-	
+
 	var/job_bitflag = NONE	// the bitflag our job applied
 
 	var/list/personal_objectives = list() // List of personal objectives not tied to the antag roles
+	var/list/special_people = list() // For characters whose text will display in a different colour when seen by this Mind
 
 /datum/mind/New(key)
 	src.key = key
@@ -202,7 +203,7 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 					var/heretic_text = C.get_heretic_symbol(H)
 					if (heretic_text)
 						M.known_people[H.real_name]["FHERESY"] = heretic_text
-				
+
 
 /datum/mind/proc/do_i_know(datum/mind/person, name)
 	if(!person && !name)
@@ -851,6 +852,7 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 	..()
 	if(!mind.assigned_role)
 		mind.assigned_role = "Unassigned" //default
+
 
 //AI
 /mob/living/silicon/ai/mind_initialize()

@@ -261,3 +261,19 @@
 	timer = 5 MINUTES
 	stressadd = -3
 	desc = "<span class='green'>I got some love, and it was wonderful!</span>"
+
+
+/datum/stressevent/dimwitted
+	timer = 10 MINUTES
+	stressadd = -4
+	desc = span_green("Everything is nice and simple...")
+
+/datum/stressevent/feebleminded
+	timer = 10 MINUTES
+	stressadd = -10
+	desc = span_green("Heeh...")
+
+/datum/stressevent/arcane_high
+	timer = 10 MINUTES
+	stressadd = -2
+	desc = span_green("Since my magical accident, everything just seems so funny!")

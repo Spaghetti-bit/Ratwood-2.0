@@ -235,7 +235,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		else
 			if(L.spans?.len)
 				chosen_spans = L.spans
-		
+
 		if(chosen_spans?.len && islist(chosen_spans))
 			spans |= chosen_spans
 
@@ -324,8 +324,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			AM.Hear(rendered, src, message_language, highlighted_message, , spans, message_mode, original_message)
 		else
 			AM.Hear(rendered, src, message_language, message, , spans, message_mode, original_message)
-		
-		
+
+
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, message)
 
 	//time for emoting!!
@@ -477,7 +477,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			listener_has_ceiling = TRUE
 			if(istransparentturf(listener_ceiling))
 				listener_has_ceiling = FALSE
-		if(!hearall)		
+		if(!hearall)
 			if((!Zs_too && !isobserver(AM)) || message_mode == MODE_WHISPER)
 				if(AM.z != src.z)
 					continue
@@ -500,7 +500,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 					for(var/mob/living/MH in viewers(world.view, speaker_ceiling))
 						if(M == MH && MH.z == speaker_ceiling?.z)
 							speaker_obstructed = FALSE
-					
+
 				if(!listener_has_ceiling)
 					for(var/mob/living/ML in viewers(world.view, listener_ceiling))
 						if(ML == src && ML.z == listener_ceiling?.z)
@@ -575,7 +575,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 /mob/living/proc/can_speak_vocal(message) //Check AFTER handling of xeno and ling channels
 	if(HAS_TRAIT(src, TRAIT_MUTE)|| HAS_TRAIT(src, TRAIT_PERMAMUTE) || HAS_TRAIT(src, TRAIT_BAGGED))
-		return FALSE	
+		return FALSE
 
 	if(is_muzzled())
 		return FALSE
@@ -619,6 +619,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(cultslurring)
 		message = cultslur(message)
+
+	if (HAS_TRAIT(src, TRAIT_SIMPLESPEECH))
+		message = simplespeech(message)
 
 	message = capitalize(message)
 

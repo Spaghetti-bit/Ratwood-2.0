@@ -267,6 +267,20 @@
 				BUFLUC++
 			STALUC = newamt
 
+/mob/living/proc/get_scaled_sq_luck(min, max)
+	if (min < 0)
+		min = 0
+	if (max > 100)
+		max = 100
+	if (min > max)
+		var/temp = min
+		min = max
+		max = temp
+	var/adjusted_luck = (src.STALUC * src.STALUC) / 400
+
+	return LERP(min, max, adjusted_luck)
+
+
 /proc/generic_stat_comparison(userstat as num, targetstat as num)
 	var/difference = userstat - targetstat
 	if(difference > 1 || difference < -1)
