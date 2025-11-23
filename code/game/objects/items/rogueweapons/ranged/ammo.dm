@@ -850,9 +850,11 @@
 	max_integrity = 10
 	force = 12
 
+//+10 damage/pen from bolt.
+//Pen increase on heavy crossbow assures these will, effectively, ALWAYS go through.
 /obj/projectile/bullet/reusable/heavy_bolt
 	name = "heavy bolt"
-	damage = 70
+	damage = 80
 	damage_type = BRUTE
 	armor_penetration = 80
 	icon = 'icons/roguetown/weapons/ammo.dmi'
