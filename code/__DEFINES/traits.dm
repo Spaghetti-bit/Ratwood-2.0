@@ -233,6 +233,7 @@
 #define TRAIT_VENOMOUS "Venomous"
 #define TRAIT_OVERTHERETIC "Overt Heretic"//Applied on someone who has rites buffs. Armour, rituos, etc.
 #define TRAIT_SPELL_DISPERSION "Barrier Dispersion"
+#define TRAIT_CONVICTION "Conviction" //Can hear Tennite prayers. Praying heals and provides nutrition.
 #define TRAIT_BAOTHA_FERTILITY_BOON "Marked and shaped by Baotha"
 
 // Economic Roles Traits
@@ -467,6 +468,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_BLOODPOOL_BORN = span_bloody("I emerged from the bloodpool of a Vampire Lord. There is no possibility for redemption for me in this land."),
 	TRAIT_ROYALSERVANT = span_greentext("I've been serving the royal family for long enough to know their exotic tastes."),
 	TRAIT_SPELL_DISPERSION = span_necrosis("Spells are useless against me, so long as I maintain my arcyne barrier."),
+	TRAIT_CONVICTION = span_suppradio("My connection to the Ten is unwavering. Prayer alone keeps me alive, for I am a conduit of faith."),
 ))
 
 // trait accessor defines
