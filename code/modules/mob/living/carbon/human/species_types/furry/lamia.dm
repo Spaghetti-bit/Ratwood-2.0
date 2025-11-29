@@ -18,7 +18,7 @@
 	<br><br> \
 	Yet... not all of them have stayed in the depths of the abyss, for some of the clans have moved far away from the coastal regions, settling in swamps, forests and even deserts, having spread themselves far and wide aeons ago."
 
-	skin_tone_wording = "Coastal Origin"
+	skin_tone_wording = "Brood"
 
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR, LIPS, HAIR, FACEHAIR, STUBBLE, LAMIAN_TAIL, OLDGREY)
