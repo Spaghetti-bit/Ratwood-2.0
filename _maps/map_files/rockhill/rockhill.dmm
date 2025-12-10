@@ -74279,6 +74279,12 @@
 "xbD" = (
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
+"xbP" = (
+/obj/structure/spider/stickyweb{
+	alpha = 90
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cave)
 "xcd" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -252605,8 +252611,8 @@ vRu
 vRu
 vRu
 vRu
-vRu
-vRu
+xbP
+fjw
 vRu
 vRu
 vRu
@@ -253038,9 +253044,9 @@ vRu
 vRu
 vRu
 vRu
-vRu
-vRu
-vRu
+fjw
+xbP
+fjw
 vRu
 vRu
 vRu
@@ -253472,8 +253478,8 @@ vRu
 vRu
 vRu
 vRu
-vRu
 fjw
+xbP
 fjw
 vRu
 vRu
@@ -482433,7 +482439,7 @@ euP
 euP
 vIa
 szJ
-wrt
+eJr
 uOL
 uOL
 irG
@@ -482865,7 +482871,7 @@ euP
 euP
 vIa
 szJ
-szJ
+wrt
 sHm
 iWi
 tLS
@@ -483296,8 +483302,8 @@ euP
 euP
 euP
 vIa
-vIa
-vIa
+szJ
+szJ
 sHm
 ldA
 tLS
@@ -592594,7 +592600,7 @@ euP
 euP
 vIa
 szJ
-kfC
+uwQ
 ptE
 ptE
 wtF
@@ -593026,7 +593032,7 @@ euP
 euP
 vIa
 szJ
-wrt
+kfC
 ptE
 ptE
 ptE
@@ -593458,7 +593464,7 @@ euP
 euP
 vIa
 szJ
-eJr
+wrt
 ptE
 ptE
 ptE
