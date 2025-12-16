@@ -117,8 +117,8 @@
 
 	var/coven_protected = FALSE
 
-	/// If true, speech generated in this area will propagate to other z-levels.
-	var/propagate_sound_z = TRUE
+	/// If true, speech generated in this area will not propagate to other z-levels, and can only be heard by hearers with a line of sight.
+	var/soundproof = FALSE
 
 
 /**

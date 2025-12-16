@@ -475,7 +475,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 	keep_area = TRUE
 	cell_area = TRUE
-	propagate_sound_z = FALSE
+	soundproof = TRUE
 
 /area/rogue/indoors/town/tavern
 	name = "tavern"
