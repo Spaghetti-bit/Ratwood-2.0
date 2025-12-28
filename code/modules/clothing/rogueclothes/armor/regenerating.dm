@@ -109,5 +109,6 @@
 /obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple/weak
 	name = "tough skin"
 	desc = "My skin... my flesh... it shall persist and renew through my sheer willpower alone."
-
+	body_parts_covered = FULL_BODY
+	body_parts_inherent = FULL_BODY
 
