@@ -980,13 +980,11 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 								var/obj/item/clothing/C = I
 								var/has_armor = FALSE
 								
-								// Check if the item has any non-zero armor values
-								if(C.armor)
-									var/list/check_armor = C.armor.getList()
-									for(var/armor_type in check_armor)
-										if(check_armor[armor_type] > 0)
-											has_armor = TRUE
-											break
+								// Check if the item has any non-zero armor values by checking the datum properties directly
+								if(C.armor && istype(C.armor, /datum/armor))
+									if(C.armor.blunt > 0 || C.armor.slash > 0 || C.armor.stab > 0 || \
+									   C.armor.piercing > 0 || C.armor.fire > 0 || C.armor.acid > 0)
+										has_armor = TRUE
 								
 								// Only modify items that actually have armor protection
 								if(has_armor)
