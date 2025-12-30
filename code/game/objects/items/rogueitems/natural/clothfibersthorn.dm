@@ -173,6 +173,9 @@
 	///How much you can bleed into the bandage until it needs to be changed
 	var/bandage_health = 150 //75 total blood stopped
 	//bandage_health * (1 - bandage_effectiveness) = total amount of blood saved from one bandage
+	/// If the bandage is soaked in some kind of medicine.
+	var/medicine_quality 
+	var/medicine_amount = 0
 
 /obj/item/natural/cloth/Initialize()
 	. = ..()
@@ -269,6 +272,21 @@
 	. = ..()
 	wet = 10
 	bandage_health = initial(bandage_health)
+
+/obj/item/natural/cloth/attackby(obj/item/I, mob/living/user, params)
+	var/obj/item/reagent_containers/C = I
+	if(!istype(C))
+		return
+	if(C.reagents.has_reagent(/datum/reagent/medicine/healthpot, 10) && !medicine_amount)
+		to_chat(user, span_notice("Soaking the [src] in lyfeblood..."))
+		if(do_after(user, 3 SECONDS, target = src))
+			C.reagents.remove_reagent(/datum/reagent/medicine/healthpot, 10)
+			medicine_quality = 1
+			medicine_amount += 10
+			desc += " It has been soaked in lyfeblood."
+			color = "#ff0000" //change this properly later!! Hopefully with a fancy overlay that doesn't turn the enitre thing red
+			update_icon()
+	. = ..()
 
 /obj/item/natural/cloth/proc/bandage(mob/living/M, mob/user)
 	if(!M.can_inject(user, TRUE))
