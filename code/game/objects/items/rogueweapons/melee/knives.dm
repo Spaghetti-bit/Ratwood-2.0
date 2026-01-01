@@ -422,6 +422,10 @@
 	max_integrity = 200
 	smeltresult = /obj/item/ingot/steel
 
+/obj/item/rogueweapon/huntingknife/idagger/dtace/Initialize()
+	. = ..()
+	AddElement(/datum/element/tipped_item)	//Lets you tip your weapon in poison
+
 /obj/item/rogueweapon/huntingknife/idagger/steel/parrying
 	name = "steel parrying dagger"
 	force = 12
