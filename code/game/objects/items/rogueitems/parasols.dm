@@ -11,7 +11,7 @@
 	gripped_intents = null
 	smeltresult = /obj/item/ash
 	anvilrepair = /datum/skill/craft/sewing
-	max_integrity = 200 // The working man's parasol
+	max_integrity = 150 // The working man's parasol
 	minstr = 1
 	resistance_flags = FLAMMABLE
 	slot_flags = null
@@ -36,7 +36,7 @@
 	desc = "A delicate instrument intended to shield one's delicate head from the rain and sun. This one is a beautiful luxurious white and gold, with fringes."
 	icon = 'icons/roguetown/items/parasols64.dmi'
 	icon_state = "parasol1"
-	max_integrity = 100 // Fashion over function
+	max_integrity = 75 // Fashion over function
 	sellprice = 45 // Takes master sewing and silk to create
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
