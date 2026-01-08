@@ -118,7 +118,7 @@
 									if(prob(1)) // somebody, call saint jiub!!
 										playsound(user, 'sound/foley/footsteps/flight_sounds/cliffracer.ogg', 100)
 						else
-							to_chat(user, span_bloody("The chains are restrcting my freedom!!"))
+							to_chat(user, span_bloody("The chains are restricting my freedom!!"))
 					else
 						to_chat(user, span_bloody("I can't fly while imbalanced like this! AGHH!!"))
 				else
