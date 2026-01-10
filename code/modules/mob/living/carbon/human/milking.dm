@@ -61,21 +61,16 @@
 	if(has_blood)
 		// Consume blood to produce milk
 		blood_volume = max(0, blood_volume - 20)
-		container.reagents.add_reagent(/datum/reagent/consumable/milk, milk_produced)
-		
-		user.visible_message(
-			span_notice("[user] milks [src] into \the [container]."),
-			span_notice("I milk [(src == user) ? "myself" : src] into \the [container]. [src]'s blood is being converted to milk!")
-		)
 	else
 		// No blood - take burn damage from life essence being drained
 		adjustFireLoss(15)
-		container.reagents.add_reagent(/datum/reagent/consumable/milk, milk_produced)
-		
-		user.visible_message(
-			span_warning("[user] forcefully milks [src] into \the [container], burning their essence!"),
-			span_warning("I forcefully milk [(src == user) ? "myself" : src] into \the [container]. [src == user ? "My" : "[src]'s"] essence burns as it's converted to milk!")
-		)		
+	
+	container.reagents.add_reagent(/datum/reagent/consumable/milk, milk_produced)
+	user.visible_message(
+		span_notice("[user] milks [src] into \the [container]."),
+		span_notice("I milk [(src == user) ? "myself" : src] into \the [container].")
+	)
+	
 	// Try to continue if there's still space (and either blood remains or willing to take more damage)
 	if(container.reagents.total_volume < container.reagents.maximum_volume)
 		if(has_blood && blood_volume >= 20)
