@@ -14,6 +14,8 @@
 	// )
 	title_adjust = list(
 		/datum/job/roguetown/physician = list(display_title = "Court Physician"),
+		/datum/job/roguetown/niteman = list(display_title = "Nightmaster", f_title = "Nightmistress"),
+		/datum/job/roguetown/nightmaiden = list(display_title = "Nightswain", f_title = "Nightmaiden"),
 		// /datum/job/roguetown/bogguardsman = list(display_title = "Vanguard"),
 	)
 	tutorial_adjust = list(
@@ -22,12 +24,8 @@
 		 to the local hightown clinic, where lesser licensed apothecaries ply their trade under your occasional passing tutelage.",
 		/datum/job/roguetown/bogguardsman = "Typically a denizen of the sparsely populated mountains and swamps surrounding Rockhill, you volunteered up with the wardens\
 				-a group of ranger types who keep a vigil over Lowtown and the untamed wilderness. \
-				While Wardens have no higher authority, operating as a fraternity of rangers, you will be called upon as members of the garrison by the Marshal or the Crown. \
-				Serve their will, hold the lowtown fort, and recieve what a ranger craves the most - freedom and safety."
-		// /datum/job/roguetown/bogguardsman = "Typically a denizen of the sparsely populated mountains and swamps surrounding Rockhill, you volunteered up with the Vanguard -\
-		// 	a group of ranger types who keep a vigil over Lowtown and the untamed wilderness beyond it. \
-		// 	While typically under less supervision than the Men at Arms stationed in hightown, you will be called upon as members of the garrison by the Marshal or the Crown. \
-		// 	Serve their will as the first line of defence from threats beyond the borders of civilisation, hold the vanguard fortress, and try to survive another day."
+				While typically under less supervision than the Men at Arms stationed in hightown, you will be called upon as members of the garrison by the Marshal or the Crown. \
+				Serve their will as the first line of defence from threats beyond the borders of civilisation, hold the vanguard fortress, and try to survive another day."
 		// /datum/job/roguetown/archivist = "CHANGE THIS!! - Teach people skills, whether DIRECTLY or by writing SKILLBOOKS. You and the Veteran next door teach people shit."
 	)
 	// species_adjust = list()
