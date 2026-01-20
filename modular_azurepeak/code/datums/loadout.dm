@@ -667,7 +667,7 @@ GLOBAL_LIST_EMPTY(loadout_items)
 
 /datum/loadout_item/butlersuspenders
     name = "Suspenders"
-    path = /obj/item/storage/belt/leather/suspenders/butler
+    path = /obj/item/storage/belt/rogue/leather/suspenders/butler
 
 /datum/loadout_item/ragmask
 	name = "Rag Mask"

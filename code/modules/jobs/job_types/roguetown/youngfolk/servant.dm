@@ -65,7 +65,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/formal
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel/black
-	belt = /obj/item/storage/belt/leather/suspenders/butler
+	belt = /obj/item/storage/belt/rogue/leather/suspenders/butler
 	beltr = /obj/item/storage/keyring/servant
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless
@@ -151,7 +151,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/formal
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel/black
-	belt = /obj/item/storage/belt/leather/suspenders/butler
+	belt = /obj/item/storage/belt/rogue/leather/suspenders/butler
 	beltr = /obj/item/storage/keyring/servant
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black

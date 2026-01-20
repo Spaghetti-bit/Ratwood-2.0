@@ -74,7 +74,7 @@
 	pants = /obj/item/clothing/under/roguetown/trou/formal
 	shoes = /obj/item/clothing/shoes/roguetown/boots/nobleboot
 	backl = /obj/item/storage/backpack/rogue/satchel/black
-	belt = /obj/item/storage/belt/leather/suspenders/butler // Aware that these render over shit like coats. it's a problem for another day, in my time.
+	belt = /obj/item/storage/belt/rogue/leather/suspenders/butler // Aware that these render over shit like coats. it's a problem for another day, in my time.
 	beltr = /obj/item/storage/keyring/servant
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	id = /obj/item/scomstone/bad
@@ -144,7 +144,7 @@
 	pants = /obj/item/clothing/under/roguetown/trou/formal
 	shoes = /obj/item/clothing/shoes/roguetown/boots/nobleboot
 	backl = /obj/item/storage/backpack/rogue/satchel/black
-	belt = /obj/item/storage/belt/leather/suspenders/butler
+	belt = /obj/item/storage/belt/rogue/leather/suspenders/butler
 	beltr = /obj/item/storage/keyring/servant
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	id = /obj/item/scomstone/bad
