@@ -133,7 +133,15 @@
 		var/percstr = abs(intent_intdamage_factor - 1) * 100
 		inspec += "\nThis intent deals [percstr]% [intent_intdamage_factor > 1 ? "more" : "less"] damage to integrity."
 	if(blunt_chipping)
-		inspec += "\n<b>Damage Bypass:</b> [blunt_chip_strength]%"
+		var/chip_strength
+		switch(blunt_chip_strength)
+			if(BLUNT_CHIP_WEAK)
+				chip_strength = "middling"
+			if(BLUNT_CHIP_STRONG)
+				chip_strength = "considerable"
+			if(BLUNT_CHIP_ABSURD)
+				chip_strength = "significant"
+		inspec += "\nA [chip_strength] sum of damage will bypass armour, if the target has no padded protection."
 	inspec += "<br>----------------------"
 
 	to_chat(user, "[inspec.Join()]")
