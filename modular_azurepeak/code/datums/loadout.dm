@@ -1605,7 +1605,7 @@ GLOBAL_LIST_EMPTY(loadout_items)
 
 /datum/loadout_item/tri_grenzelhoft_boots
 	name = "Grenzelhoft Boots"
-	path = /obj/item/clothing/shoes/roguetown/grenzelhoft
+	path = /obj/item/clothing/shoes/roguetown/boots/grenzelhoft
 
 
 /datum/loadout_item/tri_kazengun_boots
