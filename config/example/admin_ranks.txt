@@ -50,7 +50,7 @@ Exclude =
 Edit =
 
 Name = Trial Admin
-Include = @ SPAWN VAREDIT BAN
+Include = @ SPAWN VAREDIT BAN AHELP
 Exclude =
 Edit =
 
