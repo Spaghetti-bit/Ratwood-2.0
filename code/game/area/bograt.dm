@@ -105,7 +105,7 @@
 		new /datum/ambush_config/mirespiders_crawlers = 25,
 		new /datum/ambush_config/mirespiders_aragn = 10,
 		new /datum/ambush_config/mirespiders_unfair = 5)
-	deathsight_message = "the deepest depths of the mire, as dangerious"
+	deathsight_message = "the deepest depths of the mire, as dangerous as it is sunken"
 
 /area/rogue/outdoors/bograt/safe
 	name = "Terrorbog Pass"
