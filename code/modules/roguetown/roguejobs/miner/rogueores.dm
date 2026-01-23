@@ -126,15 +126,9 @@
 	smeltresult = null
 	resistance_flags = FIRE_PROOF
 	smelted = TRUE
-	var/datum/anvil_recipe/currecipe
 	var/quality = SMELTERY_LEVEL_NORMAL
 	grid_width = 64
 	grid_height = 32
-
-/obj/item/ingot/examine()
-	. += ..()
-	if(currecipe)
-		. += "<span class='warning'>It is currently being worked on to become [currecipe.name].</span>"
 
 /obj/item/ingot/Initialize(mapload, smelt_quality)
 	. = ..()
@@ -178,8 +172,6 @@
 	..()
 
 /obj/item/ingot/Destroy()
-	if(currecipe)
-		QDEL_NULL(currecipe)
 	if(istype(loc, /obj/machinery/anvil))
 		var/obj/machinery/anvil/A = loc
 		A.current_workpiece = null

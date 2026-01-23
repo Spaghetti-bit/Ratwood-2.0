@@ -3,7 +3,6 @@
 	desc = "A cast blade waiting to be finished."
 	icon = 'icons/roguetown/items/anvil_casting.dmi'
 	var/quality = SMELTERY_LEVEL_POOR
-	var/datum/anvil_recipe/currecipe
 	var/overlay_color
 
 /obj/item/blade/Initialize()

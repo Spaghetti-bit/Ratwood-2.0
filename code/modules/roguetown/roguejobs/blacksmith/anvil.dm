@@ -285,7 +285,6 @@
 
 /obj/machinery/anvil/MiddleClick(mob/user, params)
 	. = ..()
-	//currecipe = null
 
 /obj/machinery/anvil/process()
 	if(hott)
