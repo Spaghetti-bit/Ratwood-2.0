@@ -1,5 +1,4 @@
-/datum/component/anvil_quenchable
-	var/obj/item/ingot/associated_ingot
+/datum/component/anvil_quenchable // Used purely to signify an ingot is finished and ready to quench.
 
 /datum/component/anvil_quenchable/Initialize()
 	if(!isitem(parent))

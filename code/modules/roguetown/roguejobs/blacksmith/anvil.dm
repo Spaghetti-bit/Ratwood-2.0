@@ -29,7 +29,6 @@
 			// Handle adding items to forging with tongs
 			var/datum/component/forging/forging_comp = current_workpiece.GetComponent(/datum/component/forging)
 			if(forging_comp?.needed_item && T.hingot && istype(T.hingot, forging_comp.needed_item))
-				SEND_SIGNAL(current_workpiece, COMSIG_ITEM_ADDED_TO_FORGING, T.hingot, user)
 				if(istype(T.hingot, /obj/item/ingot))
 					var/obj/item/ingot/I = T.hingot
 					forging_comp.material_quality += I.quality
@@ -37,7 +36,7 @@
 				else
 					forging_comp.material_quality += previous_material_quality
 				forging_comp.current_recipe.num_of_materials += 1
-				qdel(T.hingot)
+				SEND_SIGNAL(current_workpiece, COMSIG_ITEM_ADDED_TO_FORGING, T.hingot, user)
 				T.hingot = null
 				T.update_icon()
 				update_icon()
@@ -141,7 +140,6 @@
 	if(current_workpiece)
 		var/datum/component/forging/forging_comp = current_workpiece.GetComponent(/datum/component/forging)
 		if(forging_comp?.needed_item && istype(W, forging_comp.needed_item))
-			SEND_SIGNAL(current_workpiece, COMSIG_ITEM_ADDED_TO_FORGING, W, user)
 			if(istype(W, /obj/item/ingot))
 				var/obj/item/ingot/I = W
 				forging_comp.material_quality += I.quality
@@ -149,7 +147,7 @@
 			else
 				forging_comp.material_quality += previous_material_quality
 			forging_comp.current_recipe.num_of_materials += 1
-			qdel(W)
+			SEND_SIGNAL(current_workpiece, COMSIG_ITEM_ADDED_TO_FORGING, W, user) // Handles qdel
 			return
 
 	if(W.anvilrepair)
