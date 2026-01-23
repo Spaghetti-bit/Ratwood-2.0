@@ -390,11 +390,18 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/Destroy()
 	item_flags &= ~DROPDEL	//prevent reqdels
+	master = null
+
+	// Mob
 	if(ismob(loc))
 		var/mob/m = loc
 		m.temporarilyRemoveItemFromInventory(src, TRUE)
-	for(var/X in actions)
-		qdel(X)
+	
+	// Actions ---- 
+	for(var/datum/action/action as anything in actions)
+		remove_item_action(action)
+
+	// Embedding Behavior ----
 	if(is_embedded)
 		if(isbodypart(loc))
 			var/obj/item/bodypart/embedded_part = loc
@@ -402,6 +409,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		else if(isliving(loc))
 			var/mob/living/embedded_mob = loc
 			embedded_mob.simple_remove_embedded_object(src)
+
+	// ARTIFICER RECIPES?!!! (What the fuck? WHY IS THIS HERE!!!)
 	if(artrecipe)
 		QDEL_NULL(artrecipe)
 	if(istype(loc, /obj/machinery/artificer_table))
@@ -864,6 +873,15 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		living_user.rebuild_obscured_flags() // AZURE EDIT: cache our equipped items `flags_inv` values
 
 	update_transform()
+
+/// Removes an instance of an action from our list of item actions.
+/obj/item/proc/remove_item_action(datum/action/action)
+	if(!action)
+		return
+
+	UnregisterSignal(action, COMSIG_QDELETING)
+	LAZYREMOVE(actions, action)
+	qdel(action)
 
 //sometimes we only want to grant the item's action if it's equipped in a specific slot.
 /obj/item/proc/item_action_slot_check(slot, mob/user)
