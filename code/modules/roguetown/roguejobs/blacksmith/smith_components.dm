@@ -198,7 +198,9 @@
 	else
 		// Make the item quenchable for final processing
 		parent.AddComponent(/datum/component/anvil_quenchable, current_recipe, parent)
+		shake_camera(user, 1, 1)
 		to_chat(user, span_notice("The [parent] is ready to be quenched in a water bin."))
+		playsound(parent,pick('sound/items/bsmithfailold.ogg','sound/items/bsmithfail.ogg'), 100, FALSE)
 
 	// Clean up anvil
 	if(if_created)
