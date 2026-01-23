@@ -32,6 +32,11 @@
 	RegisterSignal(parent, COMSIG_ITEM_ADDED_TO_FORGING, .proc/on_item_added_to_forging)
 	RegisterSignal(parent, COMSIG_ITEM_QUENCHED, .proc/on_quenched)
 
+/datum/component/forging/Destroy(force, silent)
+	if(current_recipe)
+		QDEL_NULL(current_recipe)
+	. = ..()
+
 /datum/component/forging/proc/on_quenched(obj/item/source, mob/living/user, turf/used_turf)
 	SIGNAL_HANDLER
 	handle_creation(used_turf, user)
