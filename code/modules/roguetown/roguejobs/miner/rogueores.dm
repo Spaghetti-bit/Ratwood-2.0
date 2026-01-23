@@ -171,14 +171,6 @@
 			return
 	..()
 
-/obj/item/ingot/Destroy()
-	if(istype(loc, /obj/machinery/anvil))
-		var/obj/machinery/anvil/A = loc
-		if(A.current_workpiece == src)
-			A.current_workpiece = null
-			A.update_icon()
-	..()
-
 /obj/item/ingot/gold
 	name = "gold bar"
 	desc = "Solid wealth in your hands."
