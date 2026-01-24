@@ -390,6 +390,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/Destroy() // Holy Lord of Clearing-Refs. PSY 6:32...
 	item_flags &= ~DROPDEL	//prevent reqdels
+	. = ..()
 	master = null
 
 	// Mob
@@ -429,7 +430,6 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		var/obj/machinery/artificer_table/A = loc
 		A.material = null
 		A.update_icon()
-	. = ..()
 
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)
 	if(((src in target) && !target_self) || (!isturf(target.loc) && !isturf(target) && not_inside))
