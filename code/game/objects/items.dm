@@ -388,7 +388,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		else
 			blade_int = max_blade_int
 
-/obj/item/Destroy()
+/obj/item/Destroy() // Holy Lord of Clearing-Refs. PSY 6:32...
 	item_flags &= ~DROPDEL	//prevent reqdels
 	master = null
 
@@ -396,6 +396,17 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if(ismob(loc))
 		var/mob/m = loc
 		m.temporarilyRemoveItemFromInventory(src, TRUE)
+
+	// Icon
+	if(mob_overlay_icon)
+		QDEL_NULL(mob_overlay_icon)
+
+	// Examine
+	if(examine_effects)
+		examine_effects = list()
+
+	// Thown by
+	thrownby = null
 	
 	// Actions ---- 
 	for(var/datum/action/action as anything in actions)
@@ -409,6 +420,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		else if(isliving(loc))
 			var/mob/living/embedded_mob = loc
 			embedded_mob.simple_remove_embedded_object(src)
+	embedding = null
 
 	// ARTIFICER RECIPES?!!! (What the fuck? WHY IS THIS HERE!!!)
 	if(artrecipe)
