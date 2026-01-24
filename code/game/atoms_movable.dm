@@ -438,10 +438,10 @@
 
 	return TRUE
 
-/atom/movable/Destroy(force)
+/atom/movable/Destroy()
 	QDEL_NULL(language_holder)
 
-	unbuckle_all_mobs(force=1)
+	unbuckle_all_mobs(force = TRUE)
 
 	if(loc)
 		//Restore air flow if we were blocking it (movables with ATMOS_PASS_PROC will need to do this manually if necessary)
@@ -471,8 +471,6 @@
 
 	LAZYNULL(client_mobs_in_contents)
 
-	. = ..()
-
 	for(var/atom/movable/AM in contents)
 		qdel(AM)
 
@@ -488,6 +486,7 @@
 	// Checking length(vis_contents) before cutting has significant speed benefits
 	if(length(vis_contents))
 		vis_contents.Cut()
+	. = ..()
 
 // Make sure you know what you're doing if you call this, this is intended to only be called by byond directly.
 // You probably want CanPass()
