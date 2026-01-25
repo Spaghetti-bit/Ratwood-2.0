@@ -93,6 +93,7 @@
 		/datum/customizer/organ/tail/lupian,
 		/datum/customizer/organ/snout/lupian,
 		/datum/customizer/organ/ears/lupian,
+		/datum/customizer/organ/horns/anthro,
 		/datum/customizer/organ/neck_feature/anthro,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,

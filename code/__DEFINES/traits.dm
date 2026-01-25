@@ -67,6 +67,7 @@
 #define TRAIT_GOODTRAINER "Good Trainer"
 #define TRAIT_BADTRAINER "Bad Trainer"
 #define TRAIT_OUTDOORSMAN "Outdoorsman"
+#define TRAIT_WILDERNESSGUIDE "Wilderness Guide"
 #define TRAIT_SEA_DRINKER "Denizen of the Deep"
 #define TRAIT_STUDENT		"Student"
 #define TRAIT_INTELLECTUAL "Intellectual"
@@ -167,6 +168,8 @@
 #define TRAIT_NIGHT_OWL "Night Owl"
 #define TRAIT_BEAUTIFUL "Beautiful"
 #define TRAIT_BEAUTIFUL_UNCANNY "Eerie Beauty"
+#define TRAIT_UNSETTLING_BEAUTY "Unsettling Beauty"
+#define TRAIT_SCARRED "Scarred"
 #define TRAIT_SIMPLE_WOUNDS "simple_wounds"
 #define TRAIT_BANDITCAMP "banditcamp"
 #define TRAIT_VAMPMANSION "vampiremansion"
@@ -287,9 +290,11 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NIGHT_OWL = span_info("I enjoy spending my time in the night."),
 	TRAIT_BEAUTIFUL = span_info("People love looking at my face"),
 	TRAIT_BEAUTIFUL_UNCANNY = span_info("<i>Some</i> would say my visage is an artwork created by the gods themselves; the others call me an unsettling abomination."),
+	TRAIT_UNSETTLING_BEAUTY = span_warning("My appearance is deeply unsettling to most. There's something profoundly wrong about my features."),
+	TRAIT_SCARRED = span_info("My face bears terrible scars that make identification difficult."),
 	TRAIT_BAD_MOOD = span_warning("Everything just seems to piss me off"),
 	TRAIT_LEAPER = "I can leap like a frog, landing where I want.",
-	TRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
+	TRAIT_NUTCRACKER = "I love kicking idiots in the nuts!",
 	TRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
 	TRAIT_SEEPRICES_SHITTY = "I can tell the prices of things... <i>Kind of</i>.",
 	TRAIT_STRONGBITE = span_info("Stronger bites, critical bite attacks."),
@@ -373,6 +378,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SEA_DRINKER = span_info("As a denizen of the deep, I can drink salty ocean water safely."),
 	TRAIT_BIGGUY = span_info("My immense frame and size allows me to smash through wooden doors, and throw people more easily."),
 	TRAIT_OUTDOORSMAN = span_info("My experience in the wilds allows me to fall asleep on surfaces like treebranches as if they were beds."),
+	TRAIT_WILDERNESSGUIDE = span_info("My presence in the wilderness calms the land itself. Those traveling near me are safe from ambush."),
 	TRAIT_STUDENT =  span_info("I am overwhelmed by all this knowledge!"),
 	TRAIT_LEGENDARY_ALCHEMIST = span_info("An expert in the art of finding herbs in the wild."),
 	TRAIT_INTELLECTUAL = span_info("I have a keen eye and can assess a person's prowess in wit and blade."),
@@ -442,10 +448,10 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_ADRENALINE_RUSH = span_notice("I'm invigorated in the midst of battle! I don't feel my wounds!"),
 	TRAIT_MEDICINE_EXPERT = span_greentext("I've deep, intricate knowledge of my craft. I can learn to become a Master or above."),
 	TRAIT_ALCHEMY_EXPERT = span_greentext("I've deep, intricate knowledge of the alchemical arts. This skill can progress to Expert and above levels."),
-	TRAIT_SMITHING_EXPERT = span_greentext("I'm experienced with the arts of smithing and engineering. Smithing, Smelting, Engineering, Mining and Pottery can progress to Legendary levels."),
+	TRAIT_SMITHING_EXPERT = span_greentext("I'm experienced with the arts of smithing and engineering. Smithing, Smelting, Engineering, Mining, Masonry and Pottery can progress to Legendary levels."),
 	TRAIT_SEWING_EXPERT = span_greentext("I'm experienced with the arts of sewing and leathercraft. Sewing, Skincrafting and Butchering can progress to Legendary levels."),
 	TRAIT_SURVIVAL_EXPERT = span_greentext("I'm experienced with the arts of survival in the wild. Cooking, Fishing, Butchering and Skincrafting can progress to Legendary levels. Sewing can progress to Journeyman levels."),
-	TRAIT_HOMESTEAD_EXPERT = span_greentext("I'm experienced with the arts of homesteading. Farming, Mining, Cooking, Fishing, Butchering, Lumberjacking and Pottery can progress to Legendary levels. Sewing and Skincrafting can progress to Journeyman levels."),
+	TRAIT_HOMESTEAD_EXPERT = span_greentext("I'm experienced with the arts of homesteading. Farming, Mining, Cooking, Fishing, Butchering, Lumberjacking, Masonry and Pottery can progress to Legendary levels. Sewing and Skincrafting can progress to Journeyman levels."),
 	TRAIT_SELF_SUSTENANCE = span_greentext("Yils of experience running from the law and living off the land have made me a jack of all trades. All crafting and labor skills can progress to Journeyman levels."),
 	TRAIT_SILVER_WEAK = span_warning("Silver is the greatest threat to my lyfe. Blows from silver weapons will set me alight, inhibit my ability to regenerate, and - if blessed - can outright destroy my vessel."),
 	TRAIT_DYES = span_notice("I know my way around pigments and shades, and I'm able to create the exact colors I want in a dye station."),

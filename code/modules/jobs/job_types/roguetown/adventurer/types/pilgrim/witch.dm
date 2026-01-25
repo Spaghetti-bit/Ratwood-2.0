@@ -7,6 +7,7 @@
 	subclass_social_rank = SOCIAL_RANK_PEASANT
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 	traits_applied = list(TRAIT_DEATHSIGHT, TRAIT_WITCH, TRAIT_ARCYNE_T1, TRAIT_ALCHEMY_EXPERT)
+	maximum_possible_slots = 20 // Should never fill, for the purpose of players to know what types towners are in round at the menu
 	subclass_stats = list(
 		STATKEY_INT = 3,
 		STATKEY_SPD = 2,
@@ -128,6 +129,30 @@
 	knockout_on_death = 15 SECONDS
 	shifted_speed_increase = 0.75
 	show_true_name = FALSE
+
+/obj/effect/proc_holder/spell/targeted/shapeshift/bat/witch
+	name = "Bat Form"
+	overlay_state = "bat_transform"
+	knockout_on_death = 15 SECONDS
+	shifted_speed_increase = 0.75
+	show_true_name = FALSE
+	desc = ""
+	shapeshift_type = /mob/living/simple_animal/hostile/retaliate/bat/witch
+	show_true_name = FALSE
+
+/mob/living/simple_animal/hostile/retaliate/bat/witch
+	name = "bat"
+	desc = ""
+	icon_state = "bat"
+	icon_living = "bat"
+	icon_dead = "bat_dead"
+	icon_gib = "bat_dead"
+	speak_emote = list("squeak")
+	base_intents = list(/datum/intent/unarmed/help)
+	harm_intent_damage = 0
+	melee_damage_lower = 0
+	melee_damage_upper = 0
+	fly_time = 3 SECONDS
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/cat
 	name = "Cat Form"

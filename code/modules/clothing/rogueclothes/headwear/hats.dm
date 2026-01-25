@@ -264,6 +264,17 @@
 /obj/item/clothing/head/roguetown/headband/red
 	color = CLOTHING_RED
 
+/obj/item/clothing/head/roguetown/maidband
+	name = "maid headband"
+	desc = "A pleated cloth headband. It has gained widespread popularity from nobles travelling with their servants."
+	icon = 'icons/roguetown/clothing/head.dmi'
+	icon_state = "maidband"
+	item_state = "maidband"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD
+	body_parts_covered = NONE
+	sewrepair = TRUE
+
 /obj/item/clothing/head/roguetown/priesthat
 	name = "priest's hat"
 	desc = ""
@@ -490,3 +501,36 @@
 	icon_state = "loudmouth"
 	item_state = "loudmouth"
 	color = CLOTHING_RED
+
+/obj/item/clothing/head/roguetown/scarf
+	name = "scarf"
+	desc = "A simple scarf, designed to be worn upon the shoulders."
+	item_state = "hijab_t"
+	icon_state = "deserthood_t"
+	color = "#b8252c"
+	hidesnoutADJ = FALSE
+	flags_inv = null
+	sleevetype = null
+	sleeved = null
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi' //Overrides slot icon behavior
+	alternate_worn_layer  = 8.9 //On top of helmet
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_MOUTH|ITEM_SLOT_NECK
+	armor = list("blunt" = 0, "slash" = 0, "stab" = 0, "piercing" = 0, "fire" = 0, "acid" = 0)
+	dynamic_hair_suffix = ""
+	edelay_type = 1
+	blocksound = SOFTHIT
+	max_integrity = 100
+	sewrepair = TRUE
+	muteinmouth = FALSE
+	spitoutmouth = FALSE
+
+/obj/item/clothing/head/roguetown/scarf/MiddleClick(mob/user)
+	overarmor = !overarmor
+	to_chat(user, span_info("I [overarmor ? "wear \the [src] under my hair" : "wear \the [src] over my hair"]."))
+	if(overarmor)
+		alternate_worn_layer = HOOD_LAYER //Below Hair Layer
+	else
+		alternate_worn_layer = BACK_LAYER //Above Hair Layer
+	user.update_inv_wear_mask()
+	user.update_inv_head()
