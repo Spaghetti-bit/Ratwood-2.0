@@ -808,8 +808,7 @@
 	name = "psydonic halberd"
 	desc = "A reliable design that has served humenkind to fell the enemy and defend Psydon's flock - now fitted with a lengthier blade and twin, silver-tipped beaks."
 	icon_state = "silverhalberd"
-	force = 10
-	force_wielded = 25
+	force = 10//Use the spear instead if you're going to one-hand this.
 	minstr = 11
 	wdefense = 7
 	is_silver = TRUE
@@ -818,10 +817,10 @@
 /obj/item/rogueweapon/halberd/psyhalberd/ComponentInitialize()
 	AddComponent(\
 		/datum/component/silverbless,\
-		pre_blessed = BLESSING_PSYDONIAN,\
+		pre_blessed = BLESSING_NONE,\
 		silver_type = SILVER_PSYDONIAN,\
 		added_force = 0,\
-		added_blade_int = 0,\
+		added_blade_int = 50,\
 		added_int = 50,\
 		added_def = 2,\
 	)
@@ -1053,9 +1052,7 @@
 	name = "psydonic greatsword"
 	desc = "It is said that a Psydonian smith was guided by Saint Malum himself to forge such a formidable blade, and given the task to slay a daemon preying on the Otavan farmlands. The design was retrieved, studied, and only a few replicas made - for they believe it dulls its edge."
 	icon_state = "silverexealt"
-	force = 8
-	force_wielded = 25
-	minstr = 11
+	minstr = 11//+2, in exchange for the better defense. Is this really a problem? C'mon. It didn't need -5 force.
 	wdefense = 6
 	is_silver = TRUE
 	smeltresult = /obj/item/ingot/silverblessed
@@ -1066,7 +1063,7 @@
 		pre_blessed = BLESSING_NONE,\
 		silver_type = SILVER_PSYDONIAN,\
 		added_force = 0,\
-		added_blade_int = 0,\
+		added_blade_int = 50,\
 		added_int = 50,\
 		added_def = 2,\
 	)
@@ -1074,11 +1071,8 @@
 /obj/item/rogueweapon/greatsword/psygsword/relic
 	name = "Apocrypha"
 	desc = "In the Otavan mosaics, Saint Ravox - bare in all but a beaked helmet and loincloth - is often depicted wielding such an imposing greatweapon against the Dark Star, Graggar. Regardless of whether this relic was actually wielded by divinity-or-not, its unparallel strength will nevertheless command even the greatest foes to fall."
-	force = 12
-	force_wielded = 30
 	icon_state = "psygsword"
-	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
-	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/exe, /datum/intent/rend, /datum/intent/axe/chop)
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/rend, /datum/intent/sword/thrust/exe, /datum/intent/sword/strike/bad)
 
 /obj/item/rogueweapon/greatsword/psygsword/relic/ComponentInitialize()
 	AddComponent(\
@@ -1099,7 +1093,7 @@
 	force_wielded = 25
 	minstr = 11
 	wdefense = 6
-	possible_item_intents = list(/datum/intent/sword/cut,/datum/intent/sword/chop,/datum/intent/stab,/datum/intent/rend/krieg)
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop, /datum/intent/sword/thrust, /datum/intent/rend/krieg)
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop, /datum/intent/sword/lunge, /datum/intent/sword/thrust/estoc)
 	alt_intents = list(/datum/intent/effect/daze, /datum/intent/sword/strike, /datum/intent/sword/bash)
 	is_silver = TRUE
