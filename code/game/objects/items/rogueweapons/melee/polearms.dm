@@ -116,6 +116,8 @@
 	clickcd = 13
 	item_d_type = "blunt"
 	intent_intdamage_factor = BLUNT_DEFAULT_INT_DAMAGEFACTOR
+	blunt_chipping = TRUE
+	blunt_chip_strength = BLUNT_CHIP_MINUSCULE
 
 /datum/intent/rend
 	name = "rend"
