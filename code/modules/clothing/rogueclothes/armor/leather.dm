@@ -282,17 +282,27 @@
 
 /obj/item/clothing/armor/leather/jacket/leathercoat/duelcoat
 	name = "leather coat"
-	desc = "A stylish coat worn by Duelists of Valoria. Light and flexible, it doesn't impede the complex movements they are known for. Well padded."
+	desc = "A stylish coat worn by Duelists of Valoria. Light and flexible, it does not impede the complex movements they are known for. Well padded."
 	icon = 'icons/roguetown/clothing/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
+
 	icon_state = "bwleathercoat"
 	item_state = "bwleathercoat"
+
 	sewrepair = TRUE
 	boobed = TRUE
+
 	slot_flags = ITEM_SLOT_ARMOR
 	armor = ARMOR_LEATHER_GOOD
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS
 	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST, BCLASS_STAB)
+
+	detail_tag = "_detail"
+	detail_color = "#FFFFFF"
+
+/obj/item/clothing/armor/leather/jacket/leathercoat/duelcoat/Initialize(mapload)
+	. = ..()
+	update_icon()
 
 /obj/item/clothing/armor/leather/jacket/leathercoat/duelcoat/update_icon()
 	cut_overlays()
@@ -302,7 +312,3 @@
 		if(get_detail_color())
 			pic.color = get_detail_color()
 		add_overlay(pic)
-
-/obj/item/clothing/armor/leather/jacket/leathercoat/duelcoat/Initialize()
-	. = ..()
-	update_icon()
