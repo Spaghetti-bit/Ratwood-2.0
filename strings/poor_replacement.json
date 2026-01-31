@@ -1,0 +1,32 @@
+{
+    "full": {
+
+    },
+    "start": {
+        "i": "aye",
+		"h": "'",
+        "that": "'at'",
+		"shit:": "shite",
+		"fuck": "fack",
+		"mercenary": "sellsword",
+		"tailor": "stitcher",
+		"doctor": "shurgeon",
+		"surgeon": "shurgeon",
+		"my": "m'",
+        "you": "yew",
+        "your": "yous",
+		"butt": "arse",
+		"something": "some'n",
+		"aren't": "aintch"
+    },
+    "end": {
+		"ing": "in'",
+		"re": "s",
+		"ve": "s'a"
+    },
+	"multiword": {
+	},
+    "syllable": {
+
+    }
+}
