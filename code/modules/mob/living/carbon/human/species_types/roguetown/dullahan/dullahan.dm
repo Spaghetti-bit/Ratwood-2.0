@@ -10,8 +10,7 @@
 	desc = "<b>Revenant</b><br>\
 	Revenants are those that have died, returning from death to continue 'living' in a manner to speak. Their origins are not entirely known, yet many strongly believe them to have originated from the rot and decay of Psydonia. \
 	Unable to truly rest, yet entirely sane of mind. Capable of detaching their heads through unknown arcyne means, they are oft wanderers due to their unknown origins and being ostracized by both the Church and many of the common masses around the lands."
-	// Stat balancing. Per-server decision. Preferably keep neutral until analysis post testmerges.
-	//race_bonus = list(STAT_INTELLIGENCE = 1, STAT_CONSTITUTION = 1)
+	race_bonus = list(STAT_INTELLIGENCE = 1, STAT_CONSTITUTION = 1)
 	skin_tone_wording = "Catalyst"
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS)
@@ -71,13 +70,17 @@
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/bodypart_feature/underwear,
+		/datum/customizer/bodypart_feature/legwear,
+		/datum/customizer/organ/tail_feature/anthro,
+		/datum/customizer/organ/tail/anthro/dullahan,
 		/datum/customizer/organ/snout/anthro/dullahan,
-		/datum/customizer/organ/horns/demihuman,
+		/datum/customizer/organ/ears/anthro/dullahan,
+		/datum/customizer/organ/horns/anthro,
+		/datum/customizer/organ/frills/anthro,
 		/datum/customizer/organ/wings/anthro,
 		/datum/customizer/organ/horns/tusks,
+		/datum/customizer/organ/neck_feature/anthro,
 		/datum/customizer/organ/soul/fire,
-		/datum/customizer/organ/tail/dullahan,
-		/datum/customizer/organ/ears/dullahan,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
@@ -95,11 +98,32 @@
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
 		/datum/body_marking/tonage,
+		/datum/body_marking/wolf,
+		/datum/body_marking/tiger,
+		/datum/body_marking/tiger/dark,
+		/datum/body_marking/sock,
 		/datum/body_marking/socklonger,
 		/datum/body_marking/tips,
+		/datum/body_marking/bellyscale,
+		/datum/body_marking/bellyscaleslim,
+		/datum/body_marking/bellyscalesmooth,
+		/datum/body_marking/bellyscaleslimsmooth,
+		/datum/body_marking/buttscale,
+		/datum/body_marking/belly,
+		/datum/body_marking/bellyslim,
+		/datum/body_marking/butt,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
+		/datum/body_marking/backspots,
+		/datum/body_marking/front,
+		/datum/body_marking/drake_eyes,
+		/datum/body_marking/spotted,
 		/datum/body_marking/nose,
+		/datum/body_marking/harlequin,
+		/datum/body_marking/harlequinreversed,
 		/datum/body_marking/bangs,
 		/datum/body_marking/bun,
+		/datum/body_marking/gradient,
 		/datum/body_marking/plain,
 	)
 	descriptor_choices = list(
