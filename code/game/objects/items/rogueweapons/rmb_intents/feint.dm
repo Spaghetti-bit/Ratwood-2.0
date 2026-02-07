@@ -78,10 +78,8 @@
 		if(HU.client?.prefs.showrolls)
 			to_chat(HU, span_warning("[HT.p_they(TRUE)] did not fall for my feint... [perc]%"))
 		return
-	// +20% parry / dodge and +20% hit chance.
-	HU.apply_status_effect(/datum/status_effect/buff/feint) // 10 second buff
 
-	HT.apply_status_effect(/datum/status_effect/debuff/exposed, 3 SECONDS)
+	HT.apply_status_effect(/datum/status_effect/debuff/exposed, 5 SECONDS)
 	HT.apply_status_effect(/datum/status_effect/debuff/clickcd, max(1.5 SECONDS + skill_factor, 2.5 SECONDS))
 	HT.Immobilize(0.5 SECONDS)
 	HT.stamina_add(HT.stamina * 0.1)
