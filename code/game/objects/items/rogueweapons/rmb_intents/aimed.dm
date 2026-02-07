@@ -28,7 +28,7 @@
 
 	var/target_in_riposte = istype(HT.rmb_intent, /datum/rmb_intent/riposte) // Special intent interaction. Aimed counters Riposte aiming chest only.
 
-	if((target_zone == BODY_ZONE_CHEST) || (user_zone == BODY_ZONE_CHEST) && !target_in_riposte)
+	if((target_zone == BODY_ZONE_CHEST || user_zone == BODY_ZONE_CHEST) && !target_in_riposte)
 		to_chat(HU, span_danger("It didn't work! [HT.p_their(TRUE)] footing returned!"))
 		to_chat(HT, span_notice("I fooled [HU.p_them()]! I've regained my footing!"))
 		HU.emote("groan")
