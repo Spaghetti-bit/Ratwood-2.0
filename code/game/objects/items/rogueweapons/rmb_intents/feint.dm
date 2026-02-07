@@ -21,12 +21,13 @@
 	var/mob/living/HU = user
 
 	// Riposte counters feint, but if an active riposte is up, feint counters it.
-	if(istype(HT.rmb_intent, /datum/rmb_intent/riposte) && !HT.has_status_effect(/datum/status_effect/buff/clash)) 
-		playsound(user, 'sound/combat/feint.ogg', 100, TRUE)
-		to_chat(HU, span_notice("[HT] looks at me like I'm some sort of fool!"))
-		to_chat(HT, span_danger("[HU] tried to feint an attack at me, what a fool!"))
-		HU.apply_status_effect(/datum/status_effect/debuff/feintcd)
-		return
+	if(HT.d_intent == INTENT_PARRY) // Only immune to feints whilst NOT dodging and on riposte intent.
+		if(istype(HT.rmb_intent, /datum/rmb_intent/riposte) && !HT.has_status_effect(/datum/status_effect/buff/clash)) 
+			playsound(user, 'sound/combat/feint.ogg', 100, TRUE)
+			to_chat(HU, span_notice("[HT] looks at me like I'm some sort of fool!"))
+			to_chat(HT, span_danger("[HU] tried to feint an attack at me, what a fool!"))
+			HU.apply_status_effect(/datum/status_effect/debuff/feintcd)
+			return
 
 	if(world.time < HT.last_cmode_time + CMODE_TIME_BUFFER) // You attempted to bait someone who wasn't in combat mode within the past 15 seconds
 		playsound(user, 'sound/combat/feint.ogg', 100, TRUE)
