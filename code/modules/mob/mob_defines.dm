@@ -289,6 +289,8 @@
 	var/mobid = 0 //incremented on spawn
 
 	var/cmode = 0
+	/// World time when last combat damage was taken - used for wound healing cooldown
+	var/last_cmode_time = 0
 	var/d_intent = INTENT_DODGE
 	var/islatejoin = FALSE
 	var/obj/effect/proc_holder/ranged_ability //Any ranged ability the mob has, as a click override
