@@ -23,6 +23,51 @@
 #define BODY_ZONE_PRECISE_L_FOOT	"l_foot"
 #define BODY_ZONE_PRECISE_R_FOOT	"r_foot"
 
+/// A list containing all zones within the head, inclusive.
+#define BODY_ZONE_LIST_HEAD list(\
+	BODY_ZONE_HEAD,\
+	BODY_ZONE_PRECISE_SKULL,\
+	BODY_ZONE_PRECISE_EARS,\
+	BODY_ZONE_PRECISE_R_EYE,\
+	BODY_ZONE_PRECISE_L_EYE,\
+	BODY_ZONE_PRECISE_NOSE,\
+	BODY_ZONE_PRECISE_MOUTH,\
+	BODY_ZONE_PRECISE_NECK,\
+)
+/// A list containing all zones within the chest, inclusive.
+#define BODY_ZONE_LIST_CHEST list(\
+	BODY_ZONE_CHEST,\
+	BODY_ZONE_PRECISE_STOMACH,\
+	BODY_ZONE_PRECISE_GROIN,\
+)
+/// A list containing all zones within the chest, exclusive. -- Used for baiting
+#define BODY_ZONE_LIST_CHEST_EXCLUSIVE list(\
+	BODY_ZONE_PRECISE_STOMACH,\
+	BODY_ZONE_PRECISE_GROIN,\
+)
+/// A list containing all zones within the right arm, inclusive.
+#define BODY_ZONE_LIST_R_ARM list(\
+	BODY_ZONE_R_ARM,\
+	BODY_ZONE_PRECISE_R_HAND,\
+)
+/// A list containing all zones within the left arm, inclusive.
+#define BODY_ZONE_LIST_L_ARM list(\
+	BODY_ZONE_L_ARM,\
+	BODY_ZONE_PRECISE_L_HAND,\
+)
+/// A list containing all zones within the right leg, inclusive.
+#define BODY_ZONE_LIST_R_LEG list(\
+	BODY_ZONE_R_LEG,\
+	BODY_ZONE_PRECISE_R_FOOT,\
+	BODY_ZONE_TAUR,\
+)
+/// A list containing all zones within the right leg, inclusive.
+#define BODY_ZONE_LIST_L_LEG list(\
+	BODY_ZONE_L_LEG,\
+	BODY_ZONE_PRECISE_L_FOOT,\
+	BODY_ZONE_TAUR,\
+)
+
 //user-readable body parts
 #define READABLE_ZONE_HEAD 		"Head"
 #define READABLE_ZONE_CHEST		"Chest"
@@ -92,18 +137,18 @@
 #define ORGAN_SLOT_VAGINA "vagina"
 
 #define ORGAN_SLOTS_HEAD_ORGANS list(\
-    ORGAN_SLOT_BRAIN,\
-    ORGAN_SLOT_BREATHING_TUBE,\
-    ORGAN_SLOT_EARS,\
-    ORGAN_SLOT_EYES,\
-    ORGAN_SLOT_TONGUE,\
-    ORGAN_SLOT_VOICE,\
-    ORGAN_SLOT_FRILLS,\
-    ORGAN_SLOT_HORNS,\
-    ORGAN_SLOT_ANTENNAS,\
-    ORGAN_SLOT_NECK_FEATURE,\
-    ORGAN_SLOT_HEAD_FEATURE,\
-    ORGAN_SLOT_SNOUT,\
+	ORGAN_SLOT_BRAIN,\
+	ORGAN_SLOT_BREATHING_TUBE,\
+	ORGAN_SLOT_EARS,\
+	ORGAN_SLOT_EYES,\
+	ORGAN_SLOT_TONGUE,\
+	ORGAN_SLOT_VOICE,\
+	ORGAN_SLOT_FRILLS,\
+	ORGAN_SLOT_HORNS,\
+	ORGAN_SLOT_ANTENNAS,\
+	ORGAN_SLOT_NECK_FEATURE,\
+	ORGAN_SLOT_HEAD_FEATURE,\
+	ORGAN_SLOT_SNOUT,\
 )
 
 #define BODYPART_FEATURE_HAIR "hair"
