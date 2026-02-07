@@ -59,13 +59,11 @@
 				if(I?.associated_skill)
 					theirskill = HT.get_skill_level(I.associated_skill)
 		perc += (ourskill - theirskill) * 20    //skill is of the essence
-		perc += (HU.STAINT - HT.STAINT) * 2
+		perc += (HU.STAINT - HT.STAINT) * 4
 		if(HT.IsOffBalanced())
 			perc += 10
 		if(HU.IsOffBalanced() || !(HU.mobility_flags & MOBILITY_STAND)) // Feinter is off balanced or lying down? Shoddy feint
 			perc -= 30
-		if(HT.STAPER > 7) // Blind mf'er too blind to notice they're being feinted.
-			perc += (HU.STAPER - HT.STAPER) * 2
 		skill_factor = (ourskill - theirskill)/2
 		perc = CLAMP(perc, 10, 90) // Min of 10%, Max of 90%
 
