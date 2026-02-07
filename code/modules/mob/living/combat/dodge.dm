@@ -137,6 +137,11 @@
 		if(!H?.check_armor_skill() || H?.legcuffed)
 			H.Knockdown(1)
 			return FALSE
+		if(H?.IsOffBalanced())
+			H.Knockdown(1)
+			to_chat(H, span_danger("I tried to dodge off-balance!"))
+			H.visible_message(span_warning("[H] slips over their own footing and falls over!"))
+			return FALSE
 		if(I) //the enemy attacked us with a weapon
 			if(!I.associated_skill) //the enemy weapon doesn't have a skill because its improvised, so penalty to attack
 				prob2defend = prob2defend + 10
@@ -276,12 +281,4 @@
 		else
 			user.balloon_alert(src, text)
 	dodgecd = FALSE
-//		if(H)
-//			if(H.IsOffBalanced())
-//				H.Knockdown(1)
-//				to_chat(H, span_danger("I tried to dodge off-balance!"))
-//		if(isturf(loc))
-//			var/turf/T = loc
-//			if(T.landsound)
-//				playsound(T, T.landsound, 100, FALSE)
 	return TRUE
