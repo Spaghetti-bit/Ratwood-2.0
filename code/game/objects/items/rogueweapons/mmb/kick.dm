@@ -34,12 +34,14 @@
 	if(mmb_intent) // why this would be null and not INTENT_KICK i have no clue, but the check already existed
 		do_attack_animation_simple(A, visual_effect_icon = mmb_intent.animname)
 	// but the rest of the logic is pretty much mob-only
+	var/should_off_balance = TRUE
 	if(ismob(A) && mmb_intent)
 		var/mob/living/M = A
 		sleep(mmb_intent.swingdelay)
 		if(M.has_status_effect(/datum/status_effect/buff/clash) && ishuman(M))
 			var/mob/living/carbon/human/HT = M
 			HT.bad_guard(span_warning("The kick throws my stance off!"))
+			should_off_balance = FALSE
 		if(QDELETED(src) || QDELETED(M))
 			return FALSE
 		if(!M.Adjacent(src))
@@ -53,11 +55,14 @@
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			H.dna.species.kicked(src, H)
+			if(H.pulling == src) // Stop pulling is handled in /kicked()
+				should_off_balance = FALSE
 		else
 			M.onkick(src)
 	else
 		A.onkick(src)
-	OffBalance(3 SECONDS)
+	if(should_off_balance)
+		OffBalance(3 SECONDS)
 	return TRUE
 
 /mob/living/proc/can_kick(atom/A, do_message = TRUE)
